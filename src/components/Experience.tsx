@@ -6,7 +6,7 @@ export const Experience = () => {
   return (
     <div className="h-[70vh]">
       <Canvas
-        className="bg-pink-100"
+        className="bg-pink-100 rounded-lg"
         camera={{
           fov: 75,
           position: [0, 2, 8],
@@ -22,8 +22,10 @@ export const Experience = () => {
 
         {/* Lights */}
         <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 10, 5]} intensity={1} />
-        <directionalLight position={[-5, 10, -5]} intensity={1} />
+        <directionalLight position={[0, 10, 5]} intensity={2} />
+        <directionalLight position={[-5, 10, -5]} intensity={2} />
+
+
       </Canvas>
     </div>
   );
