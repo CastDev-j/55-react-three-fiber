@@ -6,7 +6,7 @@ import { DoubleSide } from "three";
 
 export const Plane = (props: any) => {
   const meshRef = useRef<any>(null!);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   useFrame((_, delta) => {
     meshRef.current.rotation.z += delta * 0.5;
@@ -25,7 +25,7 @@ export const Plane = (props: any) => {
     >
       <planeGeometry args={[10, 10]} />
       {isActive ? (
-        <meshBasicMaterial color={"orange"} side={DoubleSide} />
+        <meshStandardMaterial color={"orange"} side={DoubleSide} />
       ) : (
         <meshNormalMaterial side={DoubleSide} />
       )}

@@ -9,16 +9,16 @@ export const Models = () => {
   const groupRef = useRef<Group>(null!);
 
   useFrame((_, delta) => {
-      groupRef.current.rotation.y -= delta * 0.5;
+    groupRef.current.rotation.y -= delta * 0.5;
   });
 
   return (
-      <group ref={groupRef}>
-        <Box position={[2, 0, 0]} />
+    <group ref={groupRef}>
+      <Box position={[2, 0, 0]} />
 
-        <TorusKnot position={[-2, 0, 0]} />
+      <TorusKnot position={[-2, 0, 0]} />
 
-        <Plane position={[0, -2, 0]} />
-      </group>
+      <Plane position={[0, -2, 0]} />
+    </group>
   );
 };

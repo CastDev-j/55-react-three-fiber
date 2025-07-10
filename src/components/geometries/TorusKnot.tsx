@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 
 export const TorusKnot = (props: any) => {
   const meshRef = useRef<any>(null);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   useFrame((_, delta) => {
     meshRef.current.rotation.y += delta * 0.5;
@@ -20,7 +20,7 @@ export const TorusKnot = (props: any) => {
     <mesh {...props} ref={meshRef} onClick={handleClick}>
       <torusKnotGeometry args={[1, 0.5, 128, 128]} />
       {isActive ? (
-        <meshBasicMaterial color={"orange"} />
+        <meshStandardMaterial color={"orange"} />
       ) : (
         <meshNormalMaterial />
       )}

@@ -12,8 +12,18 @@ export const Experience = () => {
           position: [0, 2, 8],
         }}
       >
+        {/* Models */}
+
         <Models />
+
+        {/* Controls */}
+
         <Controls />
+
+        {/* Lights */}
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[0, 10, 5]} intensity={1} />
+        <directionalLight position={[-5, 10, -5]} intensity={1} />
       </Canvas>
     </div>
   );

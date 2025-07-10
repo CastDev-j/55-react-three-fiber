@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 export const Box = (props: any) => {
   const meshRef = useRef<any>(null);
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   useFrame((_, delta) => {
     meshRef.current.rotation.x += delta * 0.5;
@@ -20,7 +20,7 @@ export const Box = (props: any) => {
     <mesh {...props} ref={meshRef} onClick={handleClick}>
       <boxGeometry args={[3, 3, 3]} />
       {isActive ? (
-        <meshBasicMaterial color={"orange"} />
+        <meshStandardMaterial color={"orange"} />
       ) : (
         <meshNormalMaterial />
       )}
