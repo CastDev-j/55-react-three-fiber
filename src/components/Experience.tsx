@@ -1,13 +1,19 @@
 import { Canvas } from "@react-three/fiber";
 import { Models } from "./Models";
 import { Controls } from "./Controls";
+import { SRGBColorSpace } from "three";
 
 export const Experience = () => {
   return (
     <div className="h-[70vh]">
       <Canvas
         className="bg-transparent rounded-lg"
-        gl={{ antialias: true }}
+        // dpr={[1, 2]} // default is [1, 2]
+        gl={{
+          antialias: true,
+          // toneMapping: 1,
+          outputColorSpace: SRGBColorSpace,
+        }}
         // orthographic
         camera={{
           fov: 75,
