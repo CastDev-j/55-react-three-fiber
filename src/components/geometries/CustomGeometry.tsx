@@ -2,7 +2,7 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
-import { DoubleSide, type BufferGeometry, type Mesh } from "three";
+import { type BufferGeometry, type Mesh } from "three";
 
 export const CustomGeometry = (props: any) => {
   const meshRef = useRef<Mesh>(null!);
@@ -28,15 +28,14 @@ export const CustomGeometry = (props: any) => {
 
   useEffect(() => {
     geometryRef.current.computeVertexNormals();
-
   }, [positions]);
 
   return (
-    <mesh {...props} ref={meshRef}>
+    <points {...props} ref={meshRef}>
       <bufferGeometry ref={geometryRef}>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <meshStandardMaterial color="orange" side={DoubleSide} />
-    </mesh>
+      <pointsMaterial color="orange" size={0.5} sizeAttenuation />
+    </points>
   );
 };
