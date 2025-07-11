@@ -6,7 +6,7 @@ export const Experience = () => {
   return (
     <div className="h-[70vh]">
       <Canvas
-        className="bg-pink-100 rounded-lg"
+        className="bg-transparent rounded-lg"
         // orthographic
         camera={{
           fov: 75,
