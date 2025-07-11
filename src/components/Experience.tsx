@@ -7,10 +7,16 @@ export const Experience = () => {
     <div className="h-[70vh]">
       <Canvas
         className="bg-pink-100 rounded-lg"
+        // orthographic
         camera={{
           fov: 75,
-          position: [0, 2, 8],
+          // zoom: 40,
+          position: [0, 4, 12],
+          near: 0.1,
+          far: 100,
+          
         }}
+        
       >
         {/* Models */}
 
