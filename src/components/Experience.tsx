@@ -7,6 +7,7 @@ export const Experience = () => {
     <div className="h-[70vh]">
       <Canvas
         className="bg-transparent rounded-lg"
+        gl={{ antialias: true }}
         // orthographic
         camera={{
           fov: 75,
